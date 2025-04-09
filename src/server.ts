@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req: Request, res: Response) => {
-  res.send("Hello Worlds");
+  res.send("Hello World this is the node server that is runnig from the contarizwd docker");
 });
 
 app.listen(3000, () => {
