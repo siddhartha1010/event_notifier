@@ -16,7 +16,6 @@ COPY . .
 # Build TypeScript
 RUN npm run build
 
-# Expose a port if your server listens on one (e.g., 3000)
 EXPOSE 3000
 
 # Start the server

@@ -1,13 +1,25 @@
 import express, { Request, Response } from 'express';
+import { run } from './admin';
+import { sendMessage } from './producer';
+import { getMessage } from './consumer';
 
 const app = express();
+const port = 4000;
 
-app.use(express.json());
+sendMessage();
 
-app.get('/', (req: Request, res: Response) => {
-  res.send("Hello World this is the node server that is runnig from the contarizwd docker");
-});
 
-app.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
-});
+// app.get('/', async (req: Request, res: Response) => {
+//     try {
+//         await run();  
+//         await sendMessage(); 
+//         await getMessage();
+//         res.send('Kafka topic created successfully!');
+//     } catch (err) {
+//         res.status(500).send('Error occurred while creating Kafka topic.');
+//     }
+// });
+
+// app.listen(port, () => {
+//     console.log(`Server is running on http://localhost:${port}`);
+// });
