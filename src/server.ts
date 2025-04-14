@@ -7,7 +7,7 @@ const app = express();
 const port = 4000;
 
 sendMessage();
-
+getMessage()
 
 // app.get('/', async (req: Request, res: Response) => {
 //     try {

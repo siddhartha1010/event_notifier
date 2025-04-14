@@ -12,7 +12,9 @@ export async function getMessage () {
     console.log("Running consumer.......")
     await consumer.run({
         eachMessage: async ({ topic, partition, message }) => {
-            console.log(`This is the message: ${message.toString()}`);
+            console.log(`This is the message: ${message.value?.toString()} and the topic is:${topic}`);
         },
     });
 }
+
+getMessage()
